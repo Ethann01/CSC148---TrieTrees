@@ -1,0 +1,11 @@
+{
+    "name": "Simple Delete Test 1",
+    "expectedTreeString": "TrieTree\n|-a\n|`-t\n|`-i\n|`-n\n|`-g\n|`-l\n|`-e:atingle\n|-q\n|`-u\n|`-i\n|`-l\n|`-l\n|`-e\n|`-t\n|`-s:quillets\n|-d\n||-o\n||`-t\n||`-s:dots\n|`-e\n|`-r\n|`-m\n|`-a\n|`-t\n|`-o\n|`-s\n|`-c\n|`-l\n|`-e\n|`-r\n|`-o\n|`-s\n|`-i\n|`-s:dermatosclerosis\n|-s\n|`-p\n|`-l\n|`-u\n|`-n\n|`-t:splunt\n|-i\n|`-z\n|`-h\n|`-e\n|`-v\n|`-s\n|`-k:izhevsk\n|-u\n|`-n\n|`-d\n|`-e\n|`-r\n|`-g\n|`-r\n|`-u\n|`-b:undergrub\n|-g\n|`-e\n|`-n\n|`-t\n|`-i\n|`-i\n|`-n:gentiin\n`-r\n`-e\n`-c\n`-o\n`-i\n`-l\n`-e\n`-d:recoiled",
+    "seed": "851fa6d5940a43b0bd4dc58e40652641",
+    "amount": 10,
+    "time": 5,
+    "delete": [
+        "affiliate",
+        "omegaChad"
+    ]
+}

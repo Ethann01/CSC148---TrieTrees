@@ -1,0 +1,22 @@
+{
+    "name": "Auto-Complete Simple Test",
+    "prefix": "que",
+    "seed": "gottaMoveSpeed",
+    "amount": 50,
+    "N": 5,
+    "time": 5,
+    "insert": [
+        "queenlet",
+        "quercetin",
+        "quercitannin",
+        "querulent",
+        "questioner"
+    ],
+    "expectedSuggestions": [
+        "queenlet",
+        "quercetin",
+        "quercitannin",
+        "querulent",
+        "questioner"
+    ]
+}

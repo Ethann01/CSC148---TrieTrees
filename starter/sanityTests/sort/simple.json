@@ -1,0 +1,19 @@
+{
+    "name": "Simple Sort Test",
+    "seed": "popipoTime",
+    "amount": 10,
+    "time": 5,
+    "reverse": false,
+    "expectedOrder": [
+        "anilins",
+        "cyanocarbonic",
+        "igloos",
+        "jurative",
+        "lounge",
+        "metastatic",
+        "parridge",
+        "phenolphthalein",
+        "subadministrative",
+        "taskless"
+    ]
+}

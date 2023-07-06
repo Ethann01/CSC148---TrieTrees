@@ -1,0 +1,70 @@
+<h1 id="a2-trie-trees">A2: Trie Trees</h1>
+<h2 id="what-are-they-">What are they?</h2>
+<p>Trie Trees are a tree data structure, sometimes called prefix trees.
+    They are commonly used as a dictionary or hashmap (you&#39;ll learn more about this in 263), facilitating the search
+    of a key.<br>The nodes in the tree contain a value, and are found by traversing the edges in a depth-first search
+    (you&#39;ll learn more about this in 263), which are linked by individual characters in the key. </p>
+<p><strong><em>Example</em></strong> </p>
+<p><img src="https://4.bp.blogspot.com/-GNWc5KUMGYc/WAskP-EHFKI/AAAAAAAAEz4/8yikxc2niYgyqH0FWFafq5UTp_kUK6O5ACLcB/s640/TrieDataStructureImpl.png"
+        alt="alt text"></p>
+<p>Keep in mind we won&#39;t store non-words in our nodes, this is just an example</p>
+<h2 id="-use-cases-"><strong>Use Cases</strong></h2>
+<p>Aside from serving as a dictionary (key-value pairs), trie trees have a few other applications</p>
+<h3 id="-string-sorting-"><strong>String Sorting</strong></h3>
+<p>Preorder traversal of the trie tree would obtain you a sorted list of all words in the tree from a-z, likewise a
+    postOrder traversal would obtain you a z-a ordering. Note this is with the assumption that a and z are your left and
+    right most subtrees respectively.</p>
+<h3 id="-auto-complete-"><strong>Auto-complete</strong></h3>
+<p>By traversing the tree with the given key, one can simply check all subtrees in the key&#39;s last character, as you
+    would do when sorting, to get all possible words starting with the key as prefix</p>
+<h3 id="-auto-correct-"><strong>Auto-correct</strong></h3>
+<p>Although not as complex as autocorrect in your phone or other applications, traversing the tree until you find a
+    character with no valid subtree, then checking all the valid subtrees to see if they contain the remainder of the
+    key can help you correct misspelled words.</p>
+<hr>
+<h1 id="your-tasks">Your Tasks</h1>
+<h3 id="note-we-ll-only-use-lowercase-words">NOTE: we&#39;ll only use lowercase words</h3>
+<p>You will be implementing the functionality of a trieTree as described above.<br>Like ADTs we&#39;ve seen before your
+    exact implementation may differ as long as the expected outcome is the same, for example, you may choose between
+    using a recursive solution or an iterative one. </p>
+<p>Make sure you read the doc below each method thoroughly before starting to make sure you implement things properly
+</p>
+<p>The __init__ function and __str__ are provided for you, and should not be changed. the __str__ function will display
+    a graphical representation of the TrieTree in your terminal/console. </p>
+<p>Additionally, a script to load a lot of words into your trie tree is provided, you can use and augment this to help
+    you test your implementation more.</p>
+<h2 id="-task-1-insert"><strong>Task 1:</strong> insert</h2>
+<p>Your first task is to the insert function. Given a word, insert it in the TrieTree. If your tree has subtrees
+    matching part of the word, you should make sure not to augment these, as you could lose other words from your tree.
+    If there are no subtrees for your words prefix, then you should create the children nodes appropriately and add them
+    to your subtree dictionary. Some basic docTests are provided, but make sure to test out your implementation
+    thoroughly to make sure all edge cases work properly.</p>
+<h2 id="-task-2-_-_contains-_-_"><strong>Task 2:</strong> __contains__</h2>
+<p>Now that you can insert words, we want to be able to know if a given word is in our tree. Remember, only nodes with
+    valid words have a value, so you can traverse the tree using the character of each node, and utilize this fact to
+    evaluate whether a word exists in your tree.</p>
+<h2 id="-task-3-_-_delitem-_-_"><strong>Task 3:</strong> __delitem__</h2>
+<p>Now that you can insert words, and verify that they are there, let&#39;s implement a method to remove words. At first
+    thought you may think to simply delete the value of node that contains the word, however, consider how that would
+    impact your code&#39;s performance on other search methods. Because of this you will need to prune any useless
+    branches after you delete a word from the tree.</p>
+<h2 id="-task-4-sort"><strong>Task 4:</strong> sort</h2>
+<p>Sorting is the first real use case of TrieTrees, by performing an Preorder Traversal of the TrieTree - with the
+    assumption that the subtrees go left to right alphabetically - you can obtain a set of all your words in increasing
+    order. Likewise a reversed preorder traversal will return a decreasingly ordered set.<br>You might want to review
+    your tree traversals if you&#39;re unsure here.</p>
+<h2 id="-task-5-autocomplete"><strong>Task 5:</strong> autoComplete</h2>
+<p>Now given a prefix of a word, return the first N words in your TrieTree that begin with that prefix, sorted
+    alphabetically.<br><em>Hint: Consider the sort method and how it can be utilized to obtain words matching a
+        prefix.</em></p>
+<h2 id="-task-6-autocorrect"><strong>Task 6:</strong> autoCorrect</h2>
+<p>This implementation of autoCorrect is somewhat similar to autoComplete. Given a word, you will traverse your tree
+    until you: <strong><em>A</em></strong> find the word, or <strong><em>B</em></strong> find no possible path
+    forward.<br>In the case of <strong><em>A</em></strong> you simply need to return a list containing that word.<br>In
+    the case of <strong><em>B</em></strong> you must look through your sub-children and traverse them to find possible
+    words, with up to <em>errorMax</em> errors.<br>As an example, if your tree only contains <strong>dab</strong> and
+    you autoCorrect <strong>dod</strong> with a max of 2 errors, it should find dab, however, if your max error is 1, it
+    would not find anything.<br>More examples are in the docs.</p>
+<h2 id="-task-7-merge"><strong>Task 7:</strong> merge</h2>
+<p>This one is pretty straight forward, implement a function to merge 2 dictionaries together. Try to not use extra
+    memory.</p>

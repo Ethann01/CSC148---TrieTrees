@@ -1,0 +1,16 @@
+{
+    "name": "Simple Contains Test 1 True",
+    "expectedBoolean": true,
+    "seed": "popipoTime",
+    "amount": 10,
+    "time": 5,
+    "insert": [
+        "birds",
+        "are",
+        "fakeNews"
+    ],
+    "testWords": [
+        "birds",
+        "fakeNews"
+    ]
+}
